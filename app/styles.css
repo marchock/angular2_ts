@@ -1,0 +1,59 @@
+.section {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    background: #666;
+    overflow: hidden;
+    -webkit-transition: transform3d(0,0,0);
+}
+
+.box {
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 -2px;
+    position: relative;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+    -webkit-transition: opacity 0.5s ease-out;
+}
+
+.box > div {
+    margin: 10px 10px;
+    background: #DEDEDE;
+    border-radius: 10px;
+    overflow: hidden;
+}
+ p {
+    margin: 0;
+    padding: 10px;
+ }
+
+ .btnLoadMore {
+    position: relative;
+    display: inline-block;
+ }
+
+
+@media screen and (min-width: 480px) {
+    .box {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .box {
+        width: 33.3%;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .box {
+        width: 25%;
+    }
+}
