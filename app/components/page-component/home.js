@@ -25,17 +25,19 @@ System.register(['angular2/core', '../../services/home-page/service', '../button
             HomePageComponent = (function () {
                 function HomePageComponent(blocksService) {
                     this.blocksService = blocksService;
-                    this.blocks = new Blocks();
-                    this.blocks.init({});
                 }
+                HomePageComponent.prototype.ngOnInit = function () {
+                    console.log('ngOnInit');
+                    this.blocks = new Blocks({});
+                };
                 HomePageComponent.prototype.deleteBlock = function (i) {
-                    console.log("delete", i);
                     this.blocksService.myInfo.splice(i, 1);
                 };
                 HomePageComponent = __decorate([
                     core_1.Component({
                         directives: [button_1.AddMoreBlocksButtonComponent],
-                        template: "\n        <style>\n            .section {\n                max-width: 1400px;\n                margin: 0 auto;\n            }\n        </style>\n        <div class=\"section\">\n            <h1> Home Page </h1>\n            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem\n            Ipsum has been the industry's standard dummy text ever since the 1500s</p>\n        </div>\n\n        <div class=\"container\">\n            <div class=\"box\" *ngFor=\"#block of blocksService.myInfo; #i = index\">\n                <div>\n                    <img src=\"{{ block.img }}{{i}}/\" width=\"100%\" />\n                    <p>{{ block.copy }}</p>\n                    <span (click)=\"deleteBlock(i)\">DELETE</span>\n                </div>\n            </div>\n        </div>\n        <add-blocks></add-blocks>\n    "
+                        template: "\n        <style>\n            .section {\n                max-width: 1400px;\n                margin: 0 auto;\n            }\n        </style>\n        <div class=\"section\">\n            <h1> Home Page </h1>\n            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem\n            Ipsum has been the industry's standard dummy text ever since the 1500s</p>\n        </div>\n\n        <div class=\"container\">\n            <div class=\"box\" *ngFor=\"#block of blocksService.myInfo; #i = index\">\n                <div>\n                    <img src=\"{{ block.img }}{{i}}/\" width=\"100%\" />\n                    <p>{{ block.copy }}</p>\n                    <span (click)=\"deleteBlock(i)\">DELETE</span>\n                </div>\n            </div>\n        </div>\n        <add-blocks></add-blocks>\n    ",
+                        providers: [service_1.HomePageService]
                     }), 
                     __metadata('design:paramtypes', [service_1.HomePageService])
                 ], HomePageComponent);

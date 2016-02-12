@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './components/page-component/home', './components/page-component/about-us', './components/page-component/contact-us', './components/header-component/header', './components/nav-component/nav'], function(exports_1) {
+System.register(['angular2/core', 'angular2/router', './components/page-component/home', './components/page-component/about-us', './components/page-component/contact-us', './components/page-component/jigsaw', './components/header-component/header', './components/nav-component/nav'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(['angular2/core', 'angular2/router', './components/page-componen
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, home_1, about_us_1, contact_us_1, header_1, nav_1;
+    var core_1, router_1, home_1, about_us_1, contact_us_1, jigsaw_1, header_1, nav_1;
     var AppComponent;
     return {
         setters:[
@@ -26,6 +26,9 @@ System.register(['angular2/core', 'angular2/router', './components/page-componen
             },
             function (contact_us_1_1) {
                 contact_us_1 = contact_us_1_1;
+            },
+            function (jigsaw_1_1) {
+                jigsaw_1 = jigsaw_1_1;
             },
             function (header_1_1) {
                 header_1 = header_1_1;
@@ -59,6 +62,11 @@ System.register(['angular2/core', 'angular2/router', './components/page-componen
                             path: '/contactus',
                             name: 'ContactUs',
                             component: contact_us_1.ContactUsComponent
+                        },
+                        {
+                            path: '/jigsawTest',
+                            name: 'JigsawTest',
+                            component: jigsaw_1.JigsawComponent
                         }
                     ]), 
                     __metadata('design:paramtypes', [])
@@ -69,14 +77,4 @@ System.register(['angular2/core', 'angular2/router', './components/page-componen
         }
     }
 });
-// @View({
-//     template: `
-//         <h1>Myyyyy First {{ framework }} App</h1>
-//         <h2>Template test app!!!!! App</h2>
-//         <div *ngFor="#service of myService.myInfo"> {{ service }}</div>
-//         <input type="text" [(ngModel)]="todoModal">
-//         <p>{{ todoModal }}</p>
-//         <div (click)="onClick(todoModal)">Click Me</div>
-//         `
-// })
 //# sourceMappingURL=app.component.js.map

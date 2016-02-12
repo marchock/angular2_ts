@@ -8,10 +8,11 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
         .navigation {
             position: absolute;
             top: 0;
-            left: 0;
+            right: 0;
             width: 320px;
             height: 100%;
             background-color: gray;
+            z-index: 100;
         }
 
         .hide {

@@ -2,7 +2,6 @@ import {Component, View} from 'angular2/core';
 import {HomePageService} from '../../services/home-page/service';
 import {AddMoreBlocksButtonComponent} from '../button-component/add-more-blocks/button';
 
-
 declare var Blocks: any;
 
 @Component({
@@ -30,20 +29,23 @@ declare var Blocks: any;
             </div>
         </div>
         <add-blocks></add-blocks>
-    `
+    `,
+    providers: [HomePageService]
 })
 
-export class HomePageComponent {
+export class HomePageComponent implements OnInit {
     blocks: any;
 
     constructor(public blocksService: HomePageService) {
-        this.blocks = new Blocks();
-        this.blocks.init({});
+
+    }
+
+    ngOnInit() {
+        console.log('ngOnInit');
+        this.blocks = new Blocks({});
     }
 
     deleteBlock(i) {
-        console.log("delete", i) 
-
         this.blocksService.myInfo.splice(i, 1);
     }
 };

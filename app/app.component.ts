@@ -4,6 +4,7 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {HomePageComponent} from './components/page-component/home';
 import {AboutUsComponent} from './components/page-component/about-us';
 import {ContactUsComponent} from './components/page-component/contact-us';
+import {JigsawComponent} from './components/page-component/jigsaw';
 
 import {HeaderComponent} from './components/header-component/header';
 import {NavComponent} from './components/nav-component/nav';
@@ -34,33 +35,12 @@ import {NavComponent} from './components/nav-component/nav';
             path: '/contactus',
             name: 'ContactUs',
             component: ContactUsComponent
+        },
+        {
+            path: '/jigsawTest',
+            name: 'JigsawTest',
+            component: JigsawComponent
         }
     ])
 
-export class AppComponent {
-    // frameWork: string;
-    // todoModal;
-
-    // onClick(value) {
-    //     console.log('onClick', value)
-    // }
-
-    // constructor(public myService:MyService) {
-    //     this.framework = 'Angular 2';
-
-    //     console.log('WORKING' this.myService.myInfo)
-
-    // }
-}
-
-
-// @View({
-//     template: `
-//         <h1>Myyyyy First {{ framework }} App</h1>
-//         <h2>Template test app!!!!! App</h2>
-//         <div *ngFor="#service of myService.myInfo"> {{ service }}</div>
-//         <input type="text" [(ngModel)]="todoModal">
-//         <p>{{ todoModal }}</p>
-//         <div (click)="onClick(todoModal)">Click Me</div>
-//         `
-// })
+export class AppComponent {}
